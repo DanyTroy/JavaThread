@@ -7,17 +7,14 @@ package javathread;
 
 /**
  *
- * @author danie
+ * @author troiano.daniele
  */
-public class Processo extends Thread {
-    public String s;
-    public Processo (String s){
+public class ProcessoRunnable implements Runnable {
+    private String s;
+    public ProcessoRunnable (String s) {
         this.s = s;
-        this.run();
     }
-    public void run () {
-        for(;;) {
-            System.out.println(s);
-        }
+     public void run () {
+        for(;;) System.out.println(s);
     }
 }
