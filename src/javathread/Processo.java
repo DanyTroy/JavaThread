@@ -10,14 +10,16 @@ package javathread;
  * @author danie
  */
 public class Processo extends Thread {
-    public String s;
-    public Processo (String s){
+    private String s;
+
+    public Processo(String s) {
         this.s = s;
-        this.run();
     }
-    public void run () {
-        for(;;) {
-            System.out.println(s);
+
+    public void run() {
+        int i = 0;
+        for (;;i++) {
+            System.out.println(s+ " " +i);
         }
     }
 }

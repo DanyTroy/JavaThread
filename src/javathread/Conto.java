@@ -10,20 +10,20 @@ package javathread;
  * @author troiano.daniele
  */
 public class Conto {
+       
     private int totale;
-    private int tasse = 100;
+    private final int tasse = 100;
 
     public Conto(int totale) {
         this.totale = totale;
     }
-    public void vers (int somma){
+    
+    synchronized void versa(int somma){
         totale = totale + somma - tasse;
+        System.out.println("conto: " + totale);
     }
-    public int saldo (){
+    
+    synchronized int saldo(){
         return totale;
-    }
-
-    void versa(int somma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

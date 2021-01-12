@@ -12,16 +12,18 @@ package javathread;
 public class Sportello implements Runnable{
 Conto conto;
 
-    @Override
-    public void run() {
-        
-    }
-
     public Sportello(Conto conto) {
         this.conto = conto;
+    }      
+
+    @Override
+    public void run() {
+        this.versa(500);
     }
-    public void versa (int somma){
-        conto.versa (somma);
-        System.out.println("conto: " + conto.saldo());
+    
+    public void versa(int somma){
+        conto.versa(somma);
+        //System.out.println("conto: " + conto.saldo());
     }
+    
 }

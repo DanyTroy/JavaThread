@@ -11,10 +11,20 @@ package javathread;
  */
 public class ProcessoRunnable implements Runnable {
     private String s;
-    public ProcessoRunnable (String s) {
+    private boolean stop;
+
+    public ProcessoRunnable(String s) {
+        stop = false;
         this.s = s;
     }
-     public void run () {
-        for(;;) System.out.println(s);
+
+    public void run() {
+        while(!stop){
+            System.out.println(s);
+        }
+    }
+    
+    public void stoppa(){
+        stop = true;
     }
 }
